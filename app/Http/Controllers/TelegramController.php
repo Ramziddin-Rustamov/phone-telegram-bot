@@ -47,7 +47,7 @@ class TelegramBotController extends Controller
     {
         Telegram::sendMessage([
             'chat_id' => $chatId,
-            'text' => 'Iltimos, ismingizni kiriting:'
+            'text' => 'Iltimos, Raqam egasini ismini kiriting:'
         ]);
     }
 
@@ -63,7 +63,7 @@ class TelegramBotController extends Controller
                 session()->put("user_{$chatId}_step", 1);
                 Telegram::sendMessage([
                     'chat_id' => $chatId,
-                    'text' => 'Familiyangizni kiriting:'
+                    'text' => 'Familiyasini  kiriting:'
                 ]);
                 break;
 
@@ -73,7 +73,7 @@ class TelegramBotController extends Controller
                 session()->put("user_{$chatId}_step", 2);
                 Telegram::sendMessage([
                     'chat_id' => $chatId,
-                    'text' => 'Telefon raqamingizni kiriting:'
+                    'text' => 'Telefon raqamini kiriting:'
                 ]);
                 break;
 
