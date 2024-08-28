@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Telegram\Bot\Laravel\Facades\Telegram;
 use Telegram\Bot\Keyboard\Keyboard;
 use Illuminate\Http\Request;
-use App\Models\Contact; // Contact modeli keyinroq yaratiladi
+use App\Models\Contact;
 
 class TelegramBotController extends Controller
 {
@@ -49,7 +49,6 @@ class TelegramBotController extends Controller
             'chat_id' => $chatId,
             'text' => 'Iltimos, ismingizni kiriting:'
         ]);
-        // Keyingi harakatlar uchun state saqlash
     }
 
     protected function handleContactDetails($chatId, $text)
