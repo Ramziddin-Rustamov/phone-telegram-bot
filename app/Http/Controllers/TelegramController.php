@@ -6,11 +6,15 @@ use Telegram\Bot\Laravel\Facades\Telegram;
 use Telegram\Bot\Keyboard\Keyboard;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Log;
 
 class TelegramBotController extends Controller
 {
     public function handle(Request $request)
     {
+
+        Log::warning($request->all());
+
         $update = Telegram::commandsHandler(true);
         $message = $update->getMessage();
         $chatId = $message->getChat()->getId();
